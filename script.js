@@ -92,3 +92,34 @@ else if (currentElement === 'word'){
 }
 
 
+
+export function aufgabe05(args) {
+  const input = args
+  const result = []
+  let capitalLetters = 0
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === ".") {
+      //do nothing
+    } else if (currentElement === " ") {
+      //ignoriere Leerschläge
+    } else if (currentElement === currentElement.toUpperCase()) {
+  capitalLetters ++
+}
+  
+  
+
+if (capitalLetters > 0) {
+  return true
+} else {return false
+}
+
+
+
+
+
+  }
+  return true
+}
+
