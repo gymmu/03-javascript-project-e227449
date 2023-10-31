@@ -47,16 +47,48 @@ result.push(capitalizedElement)
 export function aufgabe03(args) {
   const input = args
   const result = []
+  let count = 0 
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    // Alles 'e' sollen gelöscht werden
-if (currentElement === 'e') {
-  result.push (currentElement)
+    //Soll nur ein 'e' enthalten
+if (currentElement === 'e'){
+  count = count + 1
 }
 
-
+// Soll grosses 'E' zählen
+else if (currentElement === 'E'){
+  count = count + 1
+}
   }
-  return result.join("")
+  return count
 }
+
+
+
+ 
+
+
+
+export function aufgabe04(args) {
+  const input = args
+  const result = []
+  let count = 4
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+   
+    //Soll vier Wörter zählen
+if (currentElement === 'word'){
+  count = count + 1
+}
+
+
+else if (currentElement === 'word'){
+  count = count + 1
+}
+  }
+  return count
+}
+
 
