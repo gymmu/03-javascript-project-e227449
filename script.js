@@ -97,29 +97,28 @@ export function aufgabe05(args) {
   const input = args
   const result = []
   let capitalLetters = 0
-
+  
+//Soll keine Grossbuchstaben enthalten
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === ".") {
-      //do nothing
+      //Soll Lehrschläge ignorieren
     } else if (currentElement === " ") {
-      //ignoriere Leerschläge
-    } else if (currentElement === currentElement.toUpperCase()) {
+  //Soll falsch sein bei Sonderzeichen
+} else if (currentElement !== currentElement.toLowerCase()) {
   capitalLetters ++
+  }
 }
-  
   
 
 if (capitalLetters > 0) {
   return true
-} else {return false
-}
+}else {
+ return false
+ }
 
 
 
-
-
-  }
-  return true
+ return true
 }
 
