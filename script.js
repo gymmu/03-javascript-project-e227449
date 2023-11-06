@@ -97,10 +97,11 @@ export function aufgabe05(args) {
   const input = args
   const result = []
   let capitalLetters = 0
-  
+
 //Soll keine Grossbuchstaben enthalten
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
+    //Punkt soll Sonderzeichen sein
     if (currentElement === ".") {
       //Soll Lehrschläge ignorieren
     } else if (currentElement === " ") {
@@ -121,4 +122,77 @@ if (capitalLetters > 0) {
 
  return true
 }
+
+
+
+
+
+
+export function aufgabe06(args) {
+  const input = args;
+  const result = [];
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i];
+    if (hatSonderzeichen(currentElement)) {
+      result.push(currentElement);
+    }
+  }
+
+  return result;
+}
+
+function hatSonderzeichen(text) {
+  //Liste von Sonderzeichen die erkannt werden sollen
+  const sonderzeichen = /[!@#$%^&*(),.?":{}|<>]/; // Liste der Sonderzeichen, die du überprüfen möchtest
+
+  return sonderzeichen.test(text);
+}
+
+
+
+
+
+export function aufgabe07(args) {
+  const input = args
+  const result = []
+  let capitalLetters = 0
+
+//Soll keine Grossbuchstaben enthalten
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    //Punkt soll Sonderzeichen sein
+    if (currentElement === ".") {
+      //Soll Lehrschläge ignorieren
+    } else if (currentElement === " ") {
+  //Soll falsch sein bei Sonderzeichen
+} else if (currentElement !== currentElement.toLowerCase()) {
+  capitalLetters ++
+  }
+}
+  
+
+if (capitalLetters > 0) {
+  return true
+}else {
+ return false
+ }
+
+
+
+ return true
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
