@@ -185,14 +185,24 @@ if (capitalLetters > 0) {
 
 
 
+export function aufgabe08 (args) {
+  const input = args
+  const result = []
+  
+  return result.join("")
+}
+
+
+
 export function aufgabe09 (args) {
   const input = args
   const result = []
+  //Soll die Länge der Zeichen zählen
   let len = 0
   for (let i = 0; i < input.length; i++) {
     len++
   }
-
+//Wenn es 6 Zeichen gibt, soll true zurückgeben
   if (len === 6) {
     return true
   } else {
@@ -201,6 +211,19 @@ export function aufgabe09 (args) {
 }
 
 
+export function aufgabe11 (args) {
+  const input = args
+  const result = []
+  let ascii = -1
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    ascii = currentElement.charCodeAt(0)
+  //Soll direkt zurückgeben
+    return ascii
+  }
+  //Soll null zurückgeben
+  return null
+}
 
 
 
