@@ -127,27 +127,33 @@ if (capitalLetters > 0) {
 
 
 
-
 export function aufgabe06(args) {
-  const input = args;
-  const result = [];
-
+  const input = args
+  const result = []
+  let capitalLetters = 0
+ 
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i];
-    if (hatSonderzeichen(currentElement)) {
-      result.push(currentElement);
+    const currentElement = input [i]
+    if (currentElement === ".") {
+ //Macht nichts
+    } if (currentElement !== " ") {
+  //ignoriert Leerschläge
+    }
+   
+    else if (currentElement !== currentElement.toLowerCase()) {
+      capitalLetters++
+   
     }
   }
-
-  return result;
+ 
+  if (capitalLetters> 0) {
+    return true
+  }else {
+    return false
+  }
+ 
 }
 
-function hatSonderzeichen(text) {
-  //Liste von Sonderzeichen die erkannt werden sollen
-  const sonderzeichen = /[!@#$%^&*(),.?":{}|<>]/; // Liste der Sonderzeichen, die du überprüfen möchtest
-
-  return sonderzeichen.test(text);
-}
 
 
 
@@ -211,10 +217,24 @@ export function aufgabe09 (args) {
 }
 
 
+export function aufgabe10 (args) {
+  const input = args
+  const result = []
+  
+  return result.join("")
+}
+
+
+
 export function aufgabe11 (args) {
   const input = args
   const result = []
   let ascii = -1
+//Funktionswächter
+  if ( input.length > 1) {
+    return null
+  }
+
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     ascii = currentElement.charCodeAt(0)
@@ -227,8 +247,56 @@ export function aufgabe11 (args) {
 
 
 
+export function aufgabe12 (args) {
+  const input = args
+  const result = []
+// 'i' ersetzt 'pos'
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === 'e') {
+      return i
+    }
+  }
+  //Wenn nichts gefunden soll -1 zurückgeben
+  return -1
+}
 
 
 
 
+export function aufgabe13 (args) {
+  const input = args
+  const result = []
+ 
+  let pos = -1
 
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    //Soll nicht dirket abbrechen beim ersten 'e'
+    if (currentElement === 'e') {
+      pos = i
+    }
+  }
+  //Soll position zurückgeben
+  return pos
+}
+
+
+export function aufgabe14 (args) {
+  const input = args
+  const result = []
+  
+  
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+//Soll -1 zurückgeben wenn nicht genug 'e'
+    if (currentElement === 'e') { 
+     return -1
+    } 
+    
+    
+    
+    
+  }
+  return result.join("")
+}
