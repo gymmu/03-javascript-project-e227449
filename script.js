@@ -285,18 +285,26 @@ export function aufgabe13 (args) {
 export function aufgabe14 (args) {
   const input = args
   const result = []
+  let count = 0
+  
+  
   
   
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-//Soll -1 zurückgeben wenn nicht genug 'e'
-    if (currentElement === 'e') { 
-     return -1
-    } 
+// Wenn e' soll 2 zurückgeben
+if (currentElement === 'e') {
+  return 2
+} else if (currentElement === ' ') {
+  let count
+  //Wenn kein 'e' soll -1 zurückgeben
+} else if (currentElement !== 'e') {
+  return -1
+} 
     
     
     
     
-  }
-  return result.join("")
+ return result.join("") 
+}
 }
