@@ -194,6 +194,10 @@ if (capitalLetters > 0) {
 export function aufgabe08 (args) {
   const input = args
   const result = []
+
+  if (currentElement === 'e') {
+   
+  }
   
   return result.join("")
 }
