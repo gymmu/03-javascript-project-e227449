@@ -347,9 +347,18 @@ export function  aufgabe18 (args) {
 }
 
 
-export function aufgabe21 (args) {
+export function aufgabe20 (args) {
   const input = args
   const result = []
   
   return result.join("")
 }
+
+export function aufgabe21 (args) {
+  const input = args
+  const result = []
+
+  return true
+}
+
+
