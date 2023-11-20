@@ -194,9 +194,14 @@ if (capitalLetters > 0) {
 export function aufgabe08 (args) {
   const input = args
   const result = []
+  
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    
+  }
 
   if (currentElement === 'e') {
-   
+  return pos = i
   }
   
   return result.join("")
@@ -296,7 +301,7 @@ export function aufgabe14 (args) {
   
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-// Wenn e' soll 2 zurückgeben
+// Wenn 'e' soll 2 zurückgeben
 if (currentElement === 'e') {
   return 2
 } else if (currentElement === ' ') {
@@ -311,4 +316,40 @@ if (currentElement === 'e') {
     
  return result.join("") 
 }
+}
+
+
+export function aufgabe15(args) {
+  const input = args
+  const result = []
+
+for (let i = 0; i < input.length; i++) {
+  const currentElement = input[i]
+  
+
+
+  if (currentElement === ' ') {
+return result.join("")
+  }
+  result.push(currentElement)
+}
+  return result.join("")
+}
+
+export function  aufgabe18 (args) {
+  const input = args
+  const result = []
+  if (currentElement === 'Sie heissen Julia und sind 17 Jahre alt.') {
+    return result.join("")
+  }
+  
+  return result.join("")
+}
+
+
+export function aufgabe21 (args) {
+  const input = args
+  const result = []
+  
+  return result.join("")
 }
