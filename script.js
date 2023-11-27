@@ -124,9 +124,6 @@ if (capitalLetters > 0) {
 }
 
 
-
-
-
 export function aufgabe06(args) {
   const input = args
   const result = []
@@ -153,11 +150,6 @@ export function aufgabe06(args) {
   }
  
 }
-
-
-
-
-
 
 export function aufgabe07(args) {
   const input = args
@@ -193,18 +185,17 @@ if (capitalLetters > 0) {
 
 export function aufgabe08 (args) {
   const input = args
-  const result = []
+  
   
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     
   }
-
   if (currentElement === 'e') {
-  return pos = i
+replace() = 3
   }
   
-  return result.join("")
+  return i
 }
 
 
@@ -290,33 +281,24 @@ export function aufgabe13 (args) {
   return pos
 }
 
-
-export function aufgabe14 (args) {
-  const input = args
-  const result = []
-  let count = 0
-  
-  
-  
-  
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-// Wenn 'e' soll 2 zurückgeben
+  export function aufgabe14 (args) {
+      const input = args
+      const result = []
+      let count = 0
+     for (let i = 0; i < input.length; i++) {
+     const currentElement = input[i]
+     // Soll 'e' erkenen
 if (currentElement === 'e') {
-  return 2
-} else if (currentElement === ' ') {
-  let count
-  //Wenn kein 'e' soll -1 zurückgeben
-} else if (currentElement !== 'e') {
-  return -1
-} 
-    
-    
-    
-    
- return result.join("") 
+ count = count + 1
+if (count === 3){
+return i
 }
-}
+        }
+      }
+ return -1
+    }
+
+
 
 
 export function aufgabe15(args) {
@@ -336,6 +318,20 @@ return result.join("")
   return result.join("")
 }
 
+
+export function aufgabe16 (args) {
+  const list = 1
+  
+  for (let i = 1; i < list.length; i++) {
+    const currentElement = input[i]
+    
+  }
+  return list
+}
+
+
+
+
 export function  aufgabe18 (args) {
   const input = args
   const result = []
@@ -350,6 +346,13 @@ export function  aufgabe18 (args) {
 export function aufgabe20 (args) {
   const input = args
   const result = []
+  
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    
+  }
+  if (currentEement === '.')
+
   
   return result.join("")
 }
