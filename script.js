@@ -124,33 +124,25 @@ if (capitalLetters > 0) {
 }
 
 
+
 export function aufgabe06(args) {
-  const input = args
-  const result = []
-  let capitalLetters = 0
- 
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input [i]
-    if (currentElement === ".") {
- //Macht nichts
-    } if (currentElement !== " ") {
-  //ignoriert Leerschläge
-    }
+      const input = args; //Diese Aufgabe soll testen, ob in der Eingabe ein Sonderzeichen vorkommt.
    
-    else if (currentElement !== currentElement.toLowerCase()) {
-      capitalLetters++
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i] ;
+      const ascii = currentElement.charCodeAt(0)
    
+      if (65 <= ascii && ascii <= 90) {
+        //Prüft, ob es sich hier um einen Grossbuchstaben handelt.
+      } else if (97 <= ascii && ascii <=122) {
+        //Prüft, ob es sich hier um einen Kleinbuchstaben handelt.
+      } else if (currentElement === ' ') {
+      }else {
+        return true
+      }
     }
-  }
- 
-  if (capitalLetters> 0) {
-    return true
-  }else {
     return false
   }
- 
-}
-
 export function aufgabe07(args) {
   const input = args
   const result = []
@@ -183,21 +175,25 @@ if (capitalLetters > 0) {
 
 
 
+
+
+ 
 export function aufgabe08 (args) {
   const input = args
-  
-  
+  const result = []
+ 
+ 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    
+     if (currentElement === 'e') {
+  result.push('3')
+  }else{
+    result.push(currentElement)
   }
-  if (currentElement === 'e') {
-replace() = 3
   }
-  
-  return i
+  return result.join("")
 }
-
+ 
 
 
 export function aufgabe09 (args) {
@@ -281,21 +277,24 @@ export function aufgabe13 (args) {
   return pos
 }
 
-  export function aufgabe14 (args) {
-      const input = args
-      const result = []
-      let count = 0
-     for (let i = 0; i < input.length; i++) {
-     const currentElement = input[i]
-     // Soll 'e' erkenen
-if (currentElement === 'e') {
- count = count + 1
-if (count === 3){
-return i
-}
-        }
+
+
+    export function aufgabe14 (args) {
+const input = args
+const result = []
+let count = 0
+
+for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+   
+    if (currentElement === 'e') {// erkennt e
+   count = count + 1
+    if (count === 3){
+     return i
+    }
       }
- return -1
+      }
+    return -1
     }
 
 
@@ -343,19 +342,35 @@ export function  aufgabe18 (args) {
 }
 
 
+export function aufgabe19 (args) {
+  const input = args
+  const result = []
+ 
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    //zu dem Element wird das gleiche Element nochmals angesetzt.
+    result.push(currentElement + currentElement )
+  }
+ 
+  return result.join("")
+}
+
+
+
+
 export function aufgabe20 (args) {
   const input = args
   const result = []
-  
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    
+    if (currentElement === '.') {
+      if (input[i+1] === ' ') {
+          return true
+        }
+      }
+    }
+  return false
   }
-  if (currentEement === '.')
-
-  
-  return result.join("")
-}
 
 export function aufgabe21 (args) {
   const input = args
@@ -365,3 +380,69 @@ export function aufgabe21 (args) {
 }
 
 
+export function aufgabe22 (args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+  }
+  if (i === 'k') {
+  return true
+  }
+}
+
+export function aufgabe26 (args) {
+ 
+  const list = args.split("")  // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
+  for (let i = 0; i < list.length - 1; i++) {
+    const currentElement = list[i]
+    const nextElement = list[i+1]
+    if ( currentElement.charCodeAt(0) > nextElement.charCodeAt(0)) {
+      // Reihenfolge stimmt nicht, Elemente müssen getauscht werden.
+      const tmp = list[i+1]
+      list[i+1] = list[i]
+      list[i] = tmp
+      i = 0 // starte von vorne wenn etwas vertauscht wurde.
+    }
+  }
+  const result = list.join("")
+  return (result)
+ 
+}
+
+export function  aufgabe27 (args) {
+  const input = args
+  if(input.length === 0) return false
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+   const ascii = currentElement.charCodeAt(0)
+  
+  if (48 <= ascii && ascii <= 57) {
+
+  } else return false 
+}
+  return true
+}
+
+
+
+
+export function bubbleSort (args) {
+ 
+  const list = args.split("")  // Soll Text i Liste umwandeln um nachher Elemente zu sortieren.
+  for (let i = 0; i < list.length - 1; i++) {
+    const currentElement = list[i]
+    const nextElement = list[i+1]
+    if ( currentElement.charCodeAt(0) > nextElement.charCodeAt(0)) {
+      // Soll Elmente vertauschen
+      const tmp = list[i+1]
+      list[i+1] = list[i]
+      list[i] = tmp
+      i = -1 // Soll von vorne starten wenn etwas vertauscht worden ist.
+    }
+  }
+  const result = list.join("")
+  return (result)
+ 
+}
