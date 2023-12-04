@@ -28,10 +28,10 @@ export function aufgabe02(args) {
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    // Wandle das aktuelle Element in enen Grossbuchstaben um
+    // Soll aktuelles Element in Grossbuchstaben umwandeln
 const capitalizedElement = currentElement.toUpperCase()
 
-//Hänge den Grossbuchstaben an das Resultat an.
+//Soll Grossbuchstaben an Resulat anhängen
 result.push(capitalizedElement)
 
 
@@ -78,7 +78,7 @@ export function aufgabe04(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
    
-    //Soll vier Wörter zählen
+    //Soll Wörter zählen
 if (currentElement === 'word'){
   count = count + 1
 }
@@ -87,7 +87,7 @@ if (currentElement === 'word'){
 else if (currentElement === 'word'){
   count = count + 1
 }
-  }
+  } //Soll den gezählten Wert zurückgeben
   return count
 }
 
@@ -126,16 +126,16 @@ if (capitalLetters > 0) {
 
 
 export function aufgabe06(args) {
-      const input = args; //Diese Aufgabe soll testen, ob in der Eingabe ein Sonderzeichen vorkommt.
+      const input = args; //Soll testen ob Sonderzeichen vorkommt
    
     for (let i = 0; i < input.length; i++) {
       const currentElement = input[i] ;
       const ascii = currentElement.charCodeAt(0)
    
       if (65 <= ascii && ascii <= 90) {
-        //Prüft, ob es sich hier um einen Grossbuchstaben handelt.
+        //Soll Grossbuchstaben prüfen
       } else if (97 <= ascii && ascii <=122) {
-        //Prüft, ob es sich hier um einen Kleinbuchstaben handelt.
+        //Soll Kleinbuchstaben prüfen
       } else if (currentElement === ' ') {
       }else {
         return true
@@ -143,6 +143,11 @@ export function aufgabe06(args) {
     }
     return false
   }
+
+
+
+
+
 export function aufgabe07(args) {
   const input = args
   const result = []
@@ -185,6 +190,7 @@ export function aufgabe08 (args) {
  
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
+    //Soll 'e's mit '3' ersetzen
      if (currentElement === 'e') {
   result.push('3')
   }else{
@@ -204,7 +210,7 @@ export function aufgabe09 (args) {
   for (let i = 0; i < input.length; i++) {
     len++
   }
-//Wenn es 6 Zeichen gibt, soll true zurückgeben
+//Wenn es 6 Zeichen sind, soll true zurückgeben
   if (len === 6) {
     return true
   } else {
@@ -213,12 +219,34 @@ export function aufgabe09 (args) {
 }
 
 
-export function aufgabe10 (args) {
-  const input = args
-  const result = []
-  
-  return result.join("")
-}
+export function aufgabe10(args) {
+    const input = args;
+   
+    if (input.length !== 7) {
+    return false;
+    }
+   
+    if (input[0] !== "#") {
+    return false;
+    }
+   
+    for (let i = 1; i < input.length; i++) {
+    const currentElement = input[i];
+    //Soll ascii Code mitbewerten
+    const ascii = currentElement.charCodeAt(0);
+   
+    if (48 <= ascii && ascii <= 57) {
+    // Soll nichts machen, weil es Zahlen sind
+    } else if (65 <= ascii && ascii <= 70) {
+    // Soll nichts machen, weil es Buchstaben sind
+    } else {
+    return false;
+    }
+    }
+   
+    return true;
+    }
+ 
 
 
 
@@ -234,7 +262,7 @@ export function aufgabe11 (args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     ascii = currentElement.charCodeAt(0)
-  //Soll direkt zurückgeben
+  //Soll direkt ascii zurückgeben
     return ascii
   }
   //Soll null zurückgeben
@@ -246,14 +274,14 @@ export function aufgabe11 (args) {
 export function aufgabe12 (args) {
   const input = args
   const result = []
-// 'i' ersetzt 'pos'
+// 'i' kann 'pos' ersetzen
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === 'e') {
       return i
     }
   }
-  //Wenn nichts gefunden soll -1 zurückgeben
+  //Soll -1 zurückgeben wenn nichts gefunden
   return -1
 }
 
@@ -287,13 +315,15 @@ let count = 0
 for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
    
-    if (currentElement === 'e') {// erkennt e
+    if (currentElement === 'e') {//Soll 'e' erkennen
    count = count + 1
+   //Soll 'i' zurückgeben wenn Position 3 ist
     if (count === 3){
      return i
     }
       }
       }
+      //Sonst soll -1 zurückgeben
     return -1
     }
 
@@ -307,8 +337,6 @@ export function aufgabe15(args) {
 for (let i = 0; i < input.length; i++) {
   const currentElement = input[i]
   
-
-
   if (currentElement === ' ') {
 return result.join("")
   }
@@ -318,17 +346,37 @@ return result.join("")
 }
 
 
-export function aufgabe16 (args) {
-  const list = 1
-  
-  for (let i = 1; i < list.length; i++) {
-    const currentElement = input[i]
-    
-  }
-  return list
+
+export function aufgabe16(args) {
+  const input = args
+  const result = []
+ 
+  for (let i= 0; i < input.length; i++) {
+    const currentElement = input [i];
+    if (currentElement === '$'){
+      break;
+    }
+    result.push(currentElement);
 }
-
-
+return result.join('')
+}
+ 
+export function aufgabe17(args) {
+  const input = args;
+  const result = input.split(',')
+ 
+ 
+  for (let i = 0; i < result.length - 1; i++) {
+    for (let j = 0; j < result.length - 1 - i; j++) {
+      if (result[j] > result[j + 1]) {
+  [result[j], result[j + 1]] = [result[j + 1], result[j]]
+      }
+    }
+  }
+ 
+  return result.join(',')
+}
+ 
 
 
 export function  aufgabe18 (args) {
@@ -348,7 +396,7 @@ export function aufgabe19 (args) {
  
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    //zu dem Element wird das gleiche Element nochmals angesetzt.
+    //Soll das gleiche Element nochmals angesetzen
     result.push(currentElement + currentElement )
   }
  
@@ -364,8 +412,8 @@ export function aufgabe20 (args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === '.') {
-      if (input[i+1] === ' ') {
-          return true
+    if (input[i+1] === ' ') {
+      return true
         }
       }
     }
@@ -393,16 +441,16 @@ export function aufgabe22 (args) {
 
 export function aufgabe26 (args) {
  
-  const list = args.split("")  // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
+  const list = args.split("")  // Soll Text in Liste umwandlen
   for (let i = 0; i < list.length - 1; i++) {
     const currentElement = list[i]
     const nextElement = list[i+1]
     if ( currentElement.charCodeAt(0) > nextElement.charCodeAt(0)) {
-      // Reihenfolge stimmt nicht, Elemente müssen getauscht werden.
+      // Soll Elemente vertauschen wenn falsche Reihenfolge
       const tmp = list[i+1]
       list[i+1] = list[i]
       list[i] = tmp
-      i = 0 // starte von vorne wenn etwas vertauscht wurde.
+      i = 0 // Soll von vorne starten wenn etwas vertauscht wirde
     }
   }
   const result = list.join("")
@@ -412,12 +460,13 @@ export function aufgabe26 (args) {
 
 export function  aufgabe27 (args) {
   const input = args
+  // '0' Weil in der Informatik von 0 gezählt wird
   if(input.length === 0) return false
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
    const ascii = currentElement.charCodeAt(0)
-  
+  //Soll mit ascii Code testen ob es Zahlen sind
   if (48 <= ascii && ascii <= 57) {
 
   } else return false 
