@@ -51,7 +51,7 @@ export function aufgabe03(args) {
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    //Soll nur ein 'e' enthalten
+    //Soll kleine 'e's zählen
 if (currentElement === 'e'){
   count = count + 1
 }
@@ -73,22 +73,18 @@ else if (currentElement === 'E'){
 export function aufgabe04(args) {
   const input = args
   const result = []
-  let count = 4
+  let count = 1
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
    
     //Soll Wörter zählen
-if (currentElement === 'word'){
+if (currentElement === ' '){
   count = count + 1
 }
 
-
-else if (currentElement === 'word'){
-  count = count + 1
-}
   } //Soll den gezählten Wert zurückgeben
-  return count
+  return count 
 }
 
 
@@ -146,43 +142,18 @@ export function aufgabe06(args) {
 
 
 
-
-
-export function aufgabe07(args) {
-  const input = args
-  const result = []
-  let capitalLetters = 0
-
-//Soll keine Grossbuchstaben enthalten
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-    //Punkt soll Sonderzeichen sein
-    if (currentElement === ".") {
-      //Soll Lehrschläge ignorieren
-    } else if (currentElement === " ") {
-  //Soll falsch sein bei Sonderzeichen
-} else if (currentElement !== currentElement.toLowerCase()) {
-  capitalLetters ++
-  }
-}
+  export function aufgabe07(args) {
+    const input = args
+    const result = [] 
   
-
-if (capitalLetters > 0) {
-  return true
-}else {
- return false
- }
-
-
-
- return true
-}
+  if (input.incluedes('und')) {
+    return true
+  } else { return false
+   }
+   return result.join("")
+  }
 
 
-
-
-
- 
 export function aufgabe08 (args) {
   const input = args
   const result = []
@@ -306,7 +277,6 @@ export function aufgabe13 (args) {
 }
 
 
-
     export function aufgabe14 (args) {
 const input = args
 const result = []
@@ -382,11 +352,20 @@ export function aufgabe17(args) {
 export function  aufgabe18 (args) {
   const input = args
   const result = []
-  if (currentElement === 'Sie heissen Julia und sind 17 Jahre alt.') {
-    return result.join("")
-  }
+  let ausgabe = []
+
+  let parts = input.split(" ")
   
-  return result.join("")
+if (parts.length === 2) { 
+  let name = parts[0].trim()
+  let age = parts[1].trim()
+ausgabe = "Sie heissen " + name + 
+" und sind " + age + " Jahre alt"
+} 
+else ausgabe = "Sie heissen " + input + 
+" und sind Jahre alt"
+
+return ausgabe
 }
 
 
@@ -474,7 +453,20 @@ export function  aufgabe27 (args) {
   return true
 }
 
+export function  aufgabe28 (args) {
+  const input = args
+  const zahlen = input.split(' ')
 
+  if (zahlen.length === 2 && !isNaN(zahlen[0]) && !isNaN(zahlen[1])) {
+    const zahl1 = parseFloat(zahlen[0]);
+    const zahl2 = parseFloat(zahlen[1]);
+    
+    const summe = zahl1 + zahl2;
+    return `${summe}`;
+} else {
+    return null;
+}
+}
 
 
 export function bubbleSort (args) {
