@@ -142,15 +142,22 @@ export function aufgabe06(args) {
 
 
 
-  export function aufgabe07(args) {
+  export function aufgabe07 (args) {
     const input = args
-    const result = [] 
-  
-  if (input.incluedes('und')) {
-    return true
-  } else { return false
-   }
-   return result.join("")
+    const result = []
+   
+    for (let i=0; i < input.length; i++) {
+      const currentElement = input [i]
+    if (currentElement === "u") {
+      if (input[i+1] === "n") {
+        if (input[i+2] === "d") {
+          // wenn der Code bis hier kommt, sind die Zeichen u,n,d hintereinander
+        return true
+        }
+      }
+    }
+    }
+  return false
   }
 
 
@@ -399,24 +406,41 @@ export function aufgabe20 (args) {
   return false
   }
 
-export function aufgabe21 (args) {
-  const input = args
-  const result = []
-
-  return true
-}
-
-
-export function aufgabe22 (args) {
-  const input = args
-  const result = []
-  for (let i = 0; i < input.length; i++) {
+ 
+  export function aufgabe21 (args) {
+    const input = args
+    const result = []
+   
+  for (let i = input.length -1; i>=0; i--) {
     const currentElement = input[i]
+    result.push(currentElement)//kehrt die Eingabe um.
+   
   }
-  if (i === 'k') {
-  return true
+    return result.join("")
   }
-}
+   
+
+
+  export function aufgabe22(args) {
+    const input = args
+    const result = []
+
+    for (let i = 0; i < input.length; i++) {
+        const currentElement = input[i]
+        result.push('_')
+      
+      
+      if (currentElement === 'k')   {
+        return result.join("")
+        }
+
+        return 
+    }
+  }
+
+
+  
+
 
 export function aufgabe26 (args) {
  
