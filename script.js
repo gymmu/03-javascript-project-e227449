@@ -423,25 +423,61 @@ export function aufgabe20 (args) {
 
   export function aufgabe22(args) {
     const input = args
+    let result = []
+    let check = false;
+   
+     for (let i = 0; i < input.length; i++) {
+       if (input[i] === 'k' && !check) { 
+         check = true
+         result += input[i]
+       } else {
+         result += '_'
+       } 
+     }
+   
+     return result
+   }
+   
+
+
+  export function aufgabe25 (args) {
+    const input = args
     const result = []
+//Soll prüfen ob der input gerade ist
+    if (input.length % 2 === 0) {
 
+const pos = input.length / 2 - 1 // Soll noch eins abziehen um auf die richtige Position zu finden da man von null aus zählt
+
+for (let i = 0; i < input.length; i++) {
+  const currentElement = input[i]
+  if (i === pos){
+
+  }
+  else if (i=== pos + 1){
+
+  } else {
+    result.push(currentElement)
+  }
+}
+   } else {
+    const pos = Math.floor(input.length / 2 )
+    
     for (let i = 0; i < input.length; i++) {
-        const currentElement = input[i]
-        result.push('_')
-      
-      
-      if (currentElement === 'k')   {
-        return result.join("")
-        }
-
-        return 
+      const currentElement = input[i]
+      if (i === pos) {
+//Soll nichts machen
+    } else {
+      result.push(currentElement)
     }
+  }
+}
+    return result.join("")
+  
   }
 
 
+
   
-
-
 export function aufgabe26 (args) {
  
   const list = args.split("")  // Soll Text in Liste umwandlen
