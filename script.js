@@ -329,9 +329,9 @@ export function aufgabe16(args) {
   const result = []
  
   for (let i= 0; i < input.length; i++) {
-    const currentElement = input [i];
+    const currentElement = input [i]
     if (currentElement === '$'){
-      break;
+      break
     }
     result.push(currentElement);
 }
@@ -418,7 +418,8 @@ export function aufgabe20 (args) {
   }
     return result.join("")
   }
-   
+
+
 
 
   export function aufgabe22(args) {
@@ -438,6 +439,32 @@ export function aufgabe20 (args) {
      return result
    }
    
+
+
+
+   export function aufgabe23(args) {
+    const input = args;
+    const result = [];
+  
+    if (input.length === 0) {
+      return ''; // Soll leer zurückgeben 
+    }
+  
+    const firstChar = input.charAt(0);
+  
+    result.push(firstChar); // Soll erstes Zeichen am Anfang der Ausgabe anhängen
+  
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i];
+      result.push(currentElement);
+    }
+  
+    result.push(firstChar); // Soll erstes Zeichen am Schluss der Ausgabe anhängen
+  
+    return result.join('');
+  }
+  
+
 
 
   export function aufgabe25 (args) {
@@ -477,7 +504,7 @@ for (let i = 0; i < input.length; i++) {
 
 
 
-  
+
 export function aufgabe26 (args) {
  
   const list = args.split("")  // Soll Text in Liste umwandlen
