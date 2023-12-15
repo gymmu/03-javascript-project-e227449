@@ -19,9 +19,6 @@ if (currentElement === 'e') {
 }
 
 
-
-
-
 export function aufgabe02(args) {
   const input = args
   const result = []
@@ -38,10 +35,6 @@ result.push(capitalizedElement)
   }
   return result.join("")
 }
-
-
-
-
 
 
 export function aufgabe03(args) {
@@ -64,29 +57,25 @@ else if (currentElement === 'E'){
   return count
 }
 
-
-
- 
-
-
-
 export function aufgabe04(args) {
   const input = args
   const result = []
-  let count = 1
+  let count = 0
+  let isWord = false
 
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-   
-    //Soll Wörter zählen
-if (currentElement === ' '){
-  count = count + 1
-}
+    const currentChar = input[i]
+    const isAlphanumeric = /[a-zA-Z0-9äöüÄÖÜß]/.test(currentChar) // Überprüfe, ob das Zeichen alphanumerisch ist
 
-  } //Soll den gezählten Wert zurückgeben
-  return count 
+    if (isAlphanumeric && !isWord) {
+      isWord = true
+      count++
+    } else if (!isAlphanumeric && isWord && currentChar !== '-') {
+      isWord = false
+    }
+  }
+  return count
 }
-
 
 
 export function aufgabe05(args) {
@@ -122,10 +111,10 @@ if (capitalLetters > 0) {
 
 
 export function aufgabe06(args) {
-      const input = args; //Soll testen ob Sonderzeichen vorkommt
+      const input = args //Soll testen ob Sonderzeichen vorkommt
    
     for (let i = 0; i < input.length; i++) {
-      const currentElement = input[i] ;
+      const currentElement = input[i] 
       const ascii = currentElement.charCodeAt(0)
    
       if (65 <= ascii && ascii <= 90) {
@@ -140,26 +129,30 @@ export function aufgabe06(args) {
     return false
   }
 
-
-
-  export function aufgabe07 (args) {
+  export function aufgabe07(args) {
     const input = args
-    const result = []
-   
-    for (let i=0; i < input.length; i++) {
-      const currentElement = input [i]
-    if (currentElement === "u") {
-      if (input[i+1] === "n") {
-        if (input[i+2] === "d") {
-          // Wenn der Code bis hier kommt, sind die Zeichen u,n,d hintereinander
-        return true
-        }
-      }
-    }
-    }
-  return false
-  }
+    let result = null 
 
+    if (input.startsWith('Und ')) {
+        result = true
+    } else {
+        if (input.includes(' Und ')) {
+            result = false
+          } else {
+            if (input.includes(' Und')) {
+              result = false
+          } else {
+            if (input.toLowerCase().includes('und')) {
+                result = true
+            } else {
+                result = false
+            }
+          }
+        }
+    }
+
+    return result
+  }
 
 export function aufgabe08 (args) {
   const input = args
@@ -307,8 +300,6 @@ for (let i = 0; i < input.length; i++) {
     }
 
 
-
-
 export function aufgabe15(args) {
   const input = args
   const result = []
@@ -326,7 +317,6 @@ return result.join("")
 }
 
 
-
 export function aufgabe16(args) {
   const input = args
   const result = []
@@ -338,7 +328,7 @@ export function aufgabe16(args) {
       break
     }
     //Solange kein '$' gibt Eingabe zurück
-    result.push(currentElement);
+    result.push(currentElement)
 }
 return result.join('')
 }
@@ -346,7 +336,7 @@ return result.join('')
 
  
 export function aufgabe17(args) {
-  const input = args;
+  const input = args
   //Input wird mit einem Array getrennt
   const result = input.split(',')
  
@@ -431,46 +421,46 @@ export function aufgabe20 (args) {
   }
 
 
-
-
   export function aufgabe22(args) {
     const input = args
     let result = []
-    let check = false
    
-     for (let i = 0; i < input.length; i++) 
-      if (currentElement === input[i])
-      result.push("_")
-
-      if (currentElement === 'k') {
-
-return result.join("")  
-}
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i]
+      //Soll ein _ setzen, solange kein k gefunden wurde
+      if (currentElement !== 'k') {
+          result.push("_")
+      } else {
+      // soll das k ausgeben und dann abbrechen
+          result.push('k')
+          break
+      }
   }
-   
 
-
+  return result.join("")
+}
+  
 
    export function aufgabe23(args) {
-    const input = args;
-    const result = [];
+    const input = args
+    const result = []
   
     if (input.length === 0) {
-      return ''; // Soll leer zurückgeben 
+      return '' // Soll leer zurückgeben 
     }
   
-    const firstChar = input.charAt(0);
+    const firstChar = input.charAt(0)
   
-    result.push(firstChar); // Soll erstes Zeichen am Anfang der Ausgabe anhängen
+    result.push(firstChar) // Soll erstes Zeichen am Anfang der Ausgabe anhängen
   
     for (let i = 0; i < input.length; i++) {
-      const currentElement = input[i];
-      result.push(currentElement);
+      const currentElement = input[i]
+      result.push(currentElement)
     }
   
-    result.push(firstChar); // Soll erstes Zeichen am Schluss der Ausgabe anhängen
+    result.push(firstChar) // Soll erstes Zeichen am Schluss der Ausgabe anhängen
   
-    return result.join('');
+    return result.join('')
   }
   
   export function aufgabe24 (args) {
@@ -490,8 +480,6 @@ return result.join("")
   result.push(firstElem)
     return result.join("")
   }
-   
-   
 
 
   export function aufgabe25 (args) {
@@ -572,13 +560,13 @@ export function  aufgabe28 (args) {
   const zahlen = input.split(' ')
 
   if (zahlen.length === 2 && !isNaN(zahlen[0]) && !isNaN(zahlen[1])) {
-    const zahl1 = parseFloat(zahlen[0]);
-    const zahl2 = parseFloat(zahlen[1]);
+    const zahl1 = parseFloat(zahlen[0])
+    const zahl2 = parseFloat(zahlen[1])
     
-    const summe = zahl1 + zahl2;
-    return `${summe}`;
+    const summe = zahl1 + zahl2
+    return `${summe}`
 } else {
-    return null;
+    return null
 }
 }
 
@@ -601,3 +589,5 @@ export function bubbleSort (args) {
   return (result)
  
 }
+
+//
