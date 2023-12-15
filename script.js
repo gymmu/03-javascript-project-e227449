@@ -64,29 +64,25 @@ else if (currentElement === 'E'){
   return count
 }
 
-
-
- 
-
-
-
 export function aufgabe04(args) {
   const input = args
   const result = []
-  let count = 1
+  let count = 0
+  let isWord = false
 
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-   
-    //Soll Wörter zählen
-if (currentElement === ' '){
-  count = count + 1
-}
+    const currentChar = input[i];
+    const isAlphanumeric = /[a-zA-Z0-9äöüÄÖÜß]/.test(currentChar); // Überprüfe, ob das Zeichen alphanumerisch ist
 
-  } //Soll den gezählten Wert zurückgeben
-  return count 
+    if (isAlphanumeric && !isWord) {
+      isWord = true;
+      count++;
+    } else if (!isAlphanumeric && isWord && currentChar !== '-') {
+      isWord = false;
+    }
+  }
+  return count;
 }
-
 
 
 export function aufgabe05(args) {
@@ -142,24 +138,31 @@ export function aufgabe06(args) {
 
 
 
-  export function aufgabe07 (args) {
+  export function aufgabe07(args) {
     const input = args
-    const result = []
-   
-    for (let i=0; i < input.length; i++) {
-      const currentElement = input [i]
-    if (currentElement === "u") {
-      if (input[i+1] === "n") {
-        if (input[i+2] === "d") {
-          // wenn der Code bis hier kommt, sind die Zeichen u,n,d hintereinander
-        return true
-        }
-      }
-    }
-    }
-  return false
-  }
+    let result = null 
 
+    if (input.startsWith('Und ')) {
+        result = true
+    } else {
+        if (input.includes(' Und ')) {
+            result = false
+          } else {
+            if (input.includes(' Und')) {
+              result = false
+          } else {
+            if (input.toLowerCase().includes('und')) {
+                result = true
+            } else {
+                result = false
+            }
+          }
+        }
+    }
+
+    return result
+}
+        
 
 export function aufgabe08 (args) {
   const input = args
@@ -305,8 +308,6 @@ for (let i = 0; i < input.length; i++) {
     }
 
 
-
-
 export function aufgabe15(args) {
   const input = args
   const result = []
@@ -321,7 +322,6 @@ return result.join("")
 }
   return result.join("")
 }
-
 
 
 export function aufgabe16(args) {
@@ -466,6 +466,25 @@ export function aufgabe20 (args) {
   
 
 
+  export function aufgabe24 (args) {
+    const input = args
+    const result = []
+   
+    if (input.length === 1) return input
+    const firstElem=input[0]
+    const lastElem=input[input.length-1]
+   
+    result.push(lastElem)
+    for (let i = 1; i < input.length -1; i++) {
+      const currentElement = input[i]
+      result.push(currentElement)
+    }
+   
+  result.push(firstElem)
+    return result.join("")
+  }
+   
+   
 
   export function aufgabe25 (args) {
     const input = args
