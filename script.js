@@ -473,7 +473,25 @@ return result.join("")
     return result.join('');
   }
   
-
+  export function aufgabe24 (args) {
+    const input = args
+    const result = []
+   
+    if (input.length === 1) return input
+    const firstElem=input[0]
+    const lastElem=input[input.length-1]
+   
+    result.push(lastElem)
+    for (let i = 1; i < input.length -1; i++) {
+      const currentElement = input[i]
+      result.push(currentElement)
+    }
+   
+  result.push(firstElem)
+    return result.join("")
+  }
+   
+   
 
 
   export function aufgabe25 (args) {
