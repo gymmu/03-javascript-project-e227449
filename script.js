@@ -151,7 +151,7 @@ export function aufgabe06(args) {
     if (currentElement === "u") {
       if (input[i+1] === "n") {
         if (input[i+2] === "d") {
-          // wenn der Code bis hier kommt, sind die Zeichen u,n,d hintereinander
+          // Wenn der Code bis hier kommt, sind die Zeichen u,n,d hintereinander
         return true
         }
       }
@@ -198,31 +198,33 @@ export function aufgabe09 (args) {
 
 
 export function aufgabe10(args) {
-    const input = args;
-   
+    const input = args
+  
+    //Wenn die Eingabe nicht 7 Zeichen lang ist, soll falsch zurückgeben
+    //Hexcode ist immer 7 Zeichen lang
     if (input.length !== 7) {
-    return false;
+    return false
     }
-   
+   //Wenn die Eingabe nicht mit einem '#' beginnt, soll flasch zurückgeben
     if (input[0] !== "#") {
-    return false;
+    return false
     }
    
     for (let i = 1; i < input.length; i++) {
-    const currentElement = input[i];
+    const currentElement = input[i]
     //Soll ascii Code mitbewerten
-    const ascii = currentElement.charCodeAt(0);
+    const ascii = currentElement.charCodeAt(0)
    
     if (48 <= ascii && ascii <= 57) {
     // Soll nichts machen, weil es Zahlen sind
     } else if (65 <= ascii && ascii <= 70) {
     // Soll nichts machen, weil es Buchstaben sind
     } else {
-    return false;
+    return false
     }
     }
    
-    return true;
+    return true
     }
  
 
@@ -259,7 +261,7 @@ export function aufgabe12 (args) {
       return i
     }
   }
-  //Soll -1 zurückgeben wenn nichts gefunden
+  //Soll -1 zurückgeben wenn nichts gefunden wird
   return -1
 }
 
@@ -313,10 +315,11 @@ export function aufgabe15(args) {
 
 for (let i = 0; i < input.length; i++) {
   const currentElement = input[i]
-  
+  //Soll direkt zurückgeben, wenn es ein Leerzeichen gibt
   if (currentElement === ' ') {
 return result.join("")
   }
+  //Wenn es kein Leerzeichen hat soll alles zurückgeben
   result.push(currentElement)
 }
   return result.join("")
@@ -330,16 +333,21 @@ export function aufgabe16(args) {
  
   for (let i= 0; i < input.length; i++) {
     const currentElement = input [i]
+    //Wenn ein '$' kommt, soll abbrechen
     if (currentElement === '$'){
       break
     }
+    //Solange kein '$' gibt Eingabe zurück
     result.push(currentElement);
 }
 return result.join('')
 }
+
+
  
 export function aufgabe17(args) {
   const input = args;
+  //Input wird mit einem Array getrennt
   const result = input.split(',')
  
  
@@ -360,18 +368,21 @@ export function  aufgabe18 (args) {
   const input = args
   const result = []
   let ausgabe = []
-
+//Eingabe wird mit Leerzeichen getrennt
   let parts = input.split(" ")
-  
+   
 if (parts.length === 2) { 
+  //Trim schneidet Leerzeichen vorne und hinten ab
+  //Erster Teil soll Name sein (erstes Wort)
   let name = parts[0].trim()
+  //Ist der zweite Teil(zweites Wort, also Alter)
   let age = parts[1].trim()
 ausgabe = "Sie heissen " + name + 
 " und sind " + age + " Jahre alt"
 } 
 else ausgabe = "Sie heissen " + input + 
 " und sind Jahre alt"
-
+//Soll den obigen Satz abgeben mit dem eingefügten Input
 return ausgabe
 }
 
@@ -382,14 +393,12 @@ export function aufgabe19 (args) {
  
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    //Soll das gleiche Element nochmals angesetzen
+    //Soll den Input nochmals hinten dran hängen
     result.push(currentElement + currentElement )
   }
  
   return result.join("")
 }
-
-
 
 
 export function aufgabe20 (args) {
@@ -398,6 +407,7 @@ export function aufgabe20 (args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === '.') {
+      //Wenn Input '.' ist, soll prüfen ob nächstes Zeichen ein ' ' ist.
     if (input[i+1] === ' ') {
       return true
         }
@@ -413,7 +423,8 @@ export function aufgabe20 (args) {
    
   for (let i = input.length -1; i>=0; i--) {
     const currentElement = input[i]
-    result.push(currentElement)//kehrt die Eingabe um.
+    //Soll die Eingabe umkeheren
+    result.push(currentElement)
    
   }
     return result.join("")
@@ -425,19 +436,17 @@ export function aufgabe20 (args) {
   export function aufgabe22(args) {
     const input = args
     let result = []
-    let check = false;
+    let check = false
    
-     for (let i = 0; i < input.length; i++) {
-       if (input[i] === 'k' && !check) { 
-         check = true
-         result += input[i]
-       } else {
-         result += '_'
-       } 
-     }
-   
-     return result
-   }
+     for (let i = 0; i < input.length; i++) 
+      if (currentElement === input[i])
+      result.push("_")
+
+      if (currentElement === 'k') {
+
+return result.join("")  
+}
+  }
    
 
 
