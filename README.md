@@ -97,7 +97,7 @@ Es sollen alle Zeichen aus der Eingabe mit `_` ersetzt werden, bis zum ersten
 `k`.
 
 ## Aufgabe 23
-
+ 
 Das erste Zeichen der Eingabe soll zusätzlich ganz vorne und ganz hinten an der
 Ausgabe angehängt werden.
 
